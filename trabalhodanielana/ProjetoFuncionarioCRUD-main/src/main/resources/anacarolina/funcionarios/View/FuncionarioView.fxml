@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" style="-fx-background-color: Gainsboro;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anacarolina.funcionarios.Controller.FuncionarioController">
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Cadastro de Funcionário" />
+
+    <GridPane hgap="5" vgap="5">
+        <Label text="Matrícula" GridPane.columnIndex="2" />
+        <TextField fx:id="txtMatricula" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+        <Label text="Nome" />
+        <TextField fx:id="txtNome" GridPane.rowIndex="1" />
+
+        <Label text="CPF" GridPane.columnIndex="1" />
+        <TextField fx:id="txtCpf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Nascimento" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <DatePicker fx:id="dpNascimento" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+
+        <Label text="Cargo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField fx:id="txtCargo" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+        <Label text="Salário" GridPane.rowIndex="4" />
+        <TextField fx:id="txtSalario" GridPane.rowIndex="6" />
+
+        <Label text="Data Contratação" GridPane.rowIndex="7" />
+        <DatePicker fx:id="dpContratacao" GridPane.rowIndex="8" />
+   
+       <Label text="Funcionários Cadastrados:" GridPane.rowIndex="11" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <TitledPane expanded="false" prefHeight="25.0" prefWidth="421.0" text="Endereço">
+        <GridPane hgap="5" vgap="5">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label text="Logradouro" />
+            <TextField fx:id="txtLogradouro" GridPane.columnIndex="1" />
+
+            <Label text="Número" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNumero" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Complemento" GridPane.rowIndex="2" />
+            <TextField fx:id="txtComplemento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Bairro" GridPane.rowIndex="3" />
+            <TextField fx:id="txtBairro" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Cidade" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCidade" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Estado" GridPane.rowIndex="5" />
+            <TextField fx:id="txtEstado" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="CEP" GridPane.rowIndex="6" />
+            <TextField fx:id="txtCep" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </TitledPane>
+
+    <HBox spacing="10">
+        <Button onAction="#salvarFuncionario" style="-fx-background-color: OldLace;" text="Salvar" />
+        <Button onAction="#removerFuncionario" style="-fx-background-color: OldLace;" text="Remover Selecionado" />
+    </HBox>
+    <ListView fx:id="listFuncionarios" prefHeight="117.0" prefWidth="799.0" />
+
+    <Label style="-fx-font-weight: bold;" text="🔍 Filtros de Relatório:" />
+
+    <Separator />
+
+    <HBox prefHeight="157.0" prefWidth="777.0" spacing="10">
+      <GridPane prefHeight="370.0" prefWidth="304.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="147.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="0.0" prefWidth="157.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+              <ComboBox fx:id="cbFiltroCargo" promptText="Filtrar por cargo" style="-fx-background-color: OldLace;" />
+              <Button onAction="#aplicarFiltroCargo" style="-fx-background-color: OldLace;" text="Filtrar" GridPane.rowIndex="1" />
+         
+                 <TextField fx:id="txtFiltroCidadeEstado" promptText="Filtrar por cidade ou estado" GridPane.rowIndex="2" />
+              <Button onAction="#aplicarFiltroLocal" style="-fx-background-color: OldLace;" text="Filtrar" GridPane.columnIndex="1" />
+      
+              <TextField fx:id="txtMinSalario" promptText="Salário mínimo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              <TextField fx:id="txtMaxSalario" promptText="Salário máximo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+              <Button onAction="#aplicarFiltroSalario" style="-fx-background-color: OldLace;" text="Filtrar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <HBox prefHeight="157.0" prefWidth="464.0">
+         <children>
+         
+             <TableView fx:id="tabelaFiltrados" prefHeight="200" prefWidth="777.0">
+                 <columns>
+                     <TableColumn fx:id="colNome" text="Nome" />
+                     <TableColumn fx:id="colCargo" text="Cargo" />
+                     <TableColumn fx:id="colSalario" text="Salário" />
+                     <TableColumn fx:id="colCidade" text="Cidade" />
+                     <TableColumn fx:id="colEstado" text="Estado" />
+                 </columns>
+             </TableView>
+         </children>
+      </HBox>
+    </HBox>
+
+</VBox>
